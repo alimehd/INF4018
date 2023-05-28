@@ -90,8 +90,7 @@ def run(
         source = check_file(source)  # download
 
     # Directories
-    save_dir = increment_path(Path(project) / name, exist_ok=exist_ok)  # increment run
-    (save_dir / 'labels' if save_txt else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
+    save_dir = '/content/drive/MyDrive/INF4018/input'
 
     # Load model
     device = select_device(device)
@@ -175,7 +174,7 @@ def run(
                         label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {conf:.2f}')
                         annotator.box_label(xyxy, label, color=colors(c, True))
                     if save_crop:
-                        save_one_box(xyxy, imc, file='/content/drive/MyDrive/INF4018/output' / names[c] / f'{p.stem}.png', BGR=True)
+                        save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.png', BGR=True)
 
             # Stream results
             im0 = annotator.result()
