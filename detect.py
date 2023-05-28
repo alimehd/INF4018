@@ -158,7 +158,7 @@ def run(
                 for c in det[:, 5].unique():
                     n = (det[:, 5] == c).sum()  # detections per class
                     s += f"{n} {names[int(c)]}{'s' * (n > 1)}, "  # add to string
-                    with open('/content/drive/MyDrive/Script_py/Foundry_supp_ouput/results.txt', 'a') as f:
+                    with open('/content/drive/MyDrive/INF4018/output/results.txt', 'a') as f:
 
                         f.write(('%s,' + '%g,' + '\n') % (os.path.basename(p),n))  # label format, add here
 
